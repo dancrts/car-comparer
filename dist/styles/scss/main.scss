@@ -12,17 +12,17 @@ body {
 }
 
 .main-container {
+    position: relative;
     display: flex;
     width: 100%;
     height: calc(100vh - 20px);
 
     &__resizable {
         z-index: 3;
-        width: 333px;
+        width: 20px;
         height: $overall-height;
         overflow-x: hidden;
         position: absolute;
-        background-color: #eee;
     }
 
     &__resizer {
@@ -36,10 +36,15 @@ body {
         background-color: #42b362;
     }
 
-    &__lower {
-        position: relative;
+    &__lower, &__upper {
+        
         width: $overall-width;
         height: $overall-height;
-        background-color: #555;
+    }
+
+    &__content {
+        background-color: rgba( #000000,  0.3);
+        width: $overall-width;
+        height: $overall-height;
     }
 }

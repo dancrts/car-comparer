@@ -1,35 +1,31 @@
-const resizerDiv = document.getElementById("resizer");
+const resizerBar = document.getElementById("resizer");
 const resizableDiv = document.getElementById("resizable");
 let viewportWidth = window.innerWidth;
 let xPositionOfPointer, resizableWidth;
 
-function initContentResizer(resizer, resizable) {
-    function onMouseDown(e) {
-        xPositionOfPointer = e.clientX;
-        resizer.style.cursor = "grabbing";
-        let upperWidth = window.getComputedStyle(resizable).width;
-        resizableWidth =  parseInt(upperWidth);
-
-        document.addEventListener("mousemove", onMouseMove)
-        document.addEventListener("mouseup", onMouseUp)
-    }
-
-    function onMouseMove(e) {
-        let newXPosition = e.clientX - xPositionOfPointer;
-        let newWidth = resizableWidth + newXPosition;
-
-        if (newWidth < viewportWidth-20 && newWidth > 5) {
-            resizable.style.width = `${newWidth}px`
-        }
-    }
-
-    function onMouseUp() {
-        resizer.style.cursor = "pointer";
-        document.removeEventListener("mousemove", onMouseMove)
-        document.removeEventListener("mouseup", onMouseUp)
-    }
-
-    resizer.addEventListener("mousedown", onMouseDown);
+function onMouseUp() {
+    resizerBar.style.cursor = "pointer";
+    document.removeEventListener("mousemove", onMouseMove)
+    document.removeEventListener("mouseup", onMouseUp)
 }
 
-initContentResizer(resizerDiv, resizableDiv);
+function onMouseDown(event) {
+    xPositionOfPointer = event.clientX;
+    resizerBar.style.cursor = "grabbing";
+    let upperWidth = window.getComputedStyle(resizableDiv).width;
+    resizableWidth =  parseInt(upperWidth);
+
+    document.addEventListener("mousemove", onMouseMove)
+    document.addEventListener("mouseup", onMouseUp)
+}
+
+function onMouseMove(event) {
+    let newXPosition = event.clientX - xPositionOfPointer;
+    let newWidth = resizableWidth + newXPosition;
+
+    if (newWidth < viewportWidth-20 && newWidth > 5) {
+        resizableDiv.style.width = `${newWidth}px`
+    }
+}
+
+resizerBar.addEventListener("mousedown", onMouseDown);

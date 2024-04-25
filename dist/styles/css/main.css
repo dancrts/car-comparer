@@ -10,6 +10,7 @@ body {
 }
 
 .main-container {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -18,11 +19,10 @@ body {
 }
 .main-container__resizable {
   z-index: 3;
-  width: 333px;
+  width: 20px;
   height: calc(100vh - 20px);
   overflow-x: hidden;
   position: absolute;
-  background-color: #eee;
 }
 .main-container__resizer {
   z-index: 5;
@@ -34,9 +34,12 @@ body {
   position: absolute;
   background-color: #42b362;
 }
-.main-container__lower {
-  position: relative;
+.main-container__lower, .main-container__upper {
   width: calc(100vw - 20px);
   height: calc(100vh - 20px);
-  background-color: #555;
+}
+.main-container__content {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: calc(100vw - 20px);
+  height: calc(100vh - 20px);
 }
