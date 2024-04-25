@@ -23,7 +23,7 @@ function onMouseMove(event) {
     let newXPosition = event.clientX - xPositionOfPointer;
     let newWidth = resizableWidth + newXPosition;
 
-    if (newWidth < viewportWidth-20 && newWidth > 5) {
+    if (newWidth < viewportWidth-26 && newWidth > 16) {
         resizableDiv.style.width = `${newWidth}px`
     }
 }
