@@ -17,24 +17,26 @@ body {
   height: calc(100vh - 20px);
 }
 .main-container__resizable {
+  z-index: 3;
   width: 333px;
-  height: 100%;
+  height: calc(100vh - 20px);
   overflow-x: hidden;
-  position: relative;
+  position: absolute;
   background-color: #eee;
 }
 .main-container__resizer {
+  z-index: 5;
   width: 5px;
   top: 0;
   right: 0;
   cursor: pointer;
-  height: 100%;
+  height: calc(100vh - 20px);
   position: absolute;
   background-color: #42b362;
 }
 .main-container__lower {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  position: relative;
+  width: calc(100vw - 20px);
+  height: calc(100vh - 20px);
   background-color: #555;
 }

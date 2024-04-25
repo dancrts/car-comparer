@@ -1,3 +1,6 @@
+$overall-height: calc(100vh - 20px);
+$overall-width: calc(100vw - 20px);
+
 * {
     margin: 0;
     padding: 0;
@@ -14,25 +17,29 @@ body {
     height: calc(100vh - 20px);
 
     &__resizable {
+        z-index: 3;
         width: 333px;
-        height: 100%;
+        height: $overall-height;
         overflow-x: hidden;
-        position: relative;
+        position: absolute;
         background-color: #eee;
     }
 
     &__resizer {
+        z-index: 5;
         width: 5px;
         top: 0;
         right: 0;
         cursor: pointer;
-        height: 100%;
+        height: $overall-height;
         position: absolute;
         background-color: #42b362;
     }
 
     &__lower {
-        flex-grow: 1;
+        position: relative;
+        width: $overall-width;
+        height: $overall-height;
         background-color: #555;
     }
 }
