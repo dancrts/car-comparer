@@ -33,18 +33,25 @@ body {
         cursor: pointer;
         height: $overall-height;
         position: absolute;
-        background-color: #42b362;
+        background-color: white;
     }
 
     &__lower, &__upper {
-        
         width: $overall-width;
         height: $overall-height;
     }
 
+    &__lower {
+        background-image: url(/dist/assets/img/car2/car2-back-desktop.jpg);
+    }
+
+    &__upper {
+        background-image: url(/dist/assets/img/car1/car1-back.jpg);
+    }
+
     &__content {
-        background-color: rgba( #000000,  0.3);
         width: $overall-width;
         height: $overall-height;
+        padding: 20px;
     }
 }

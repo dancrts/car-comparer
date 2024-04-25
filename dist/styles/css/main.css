@@ -32,14 +32,20 @@ body {
   cursor: pointer;
   height: calc(100vh - 20px);
   position: absolute;
-  background-color: #42b362;
+  background-color: white;
 }
 .main-container__lower, .main-container__upper {
   width: calc(100vw - 20px);
   height: calc(100vh - 20px);
 }
+.main-container__lower {
+  background-image: url(/dist/assets/img/car2/car2-back-desktop.jpg);
+}
+.main-container__upper {
+  background-image: url(/dist/assets/img/car1/car1-back.jpg);
+}
 .main-container__content {
-  background-color: rgba(0, 0, 0, 0.3);
   width: calc(100vw - 20px);
   height: calc(100vh - 20px);
+  padding: 20px;
 }
